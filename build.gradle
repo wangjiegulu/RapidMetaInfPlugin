@@ -27,6 +27,18 @@ allprojects {
         }
     }
 
+    ext {
+        global_compileSdkVersion = 26
+        global_minSdkVersion = 14
+        global_targetSdkVersion = 26
+
+        global_supportVersion = '26.1.0'
+        global_constraintLayoutVersion = "1.0.2"
+
+        global_junitVersion = '4.12'
+        global_runnerVersion = '1.0.1'
+        global_espressoVersion = '3.0.1'
+    }
 
 }
 
