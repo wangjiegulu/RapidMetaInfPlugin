@@ -34,12 +34,10 @@ class RapidMetaInfPlugin implements Plugin<Project> {
         }
         rapidMetaInfTask.setDestDir(destDir)
 
-
         project.afterEvaluate {
             project.tasks.findAll { task ->
                 task.name.startsWith('generate') && task.name.endsWith('Resources')
             }.each { t ->
-                println("each...t: " + t.name)
                 t.dependsOn rapidMetaInfTask
             }
         }
