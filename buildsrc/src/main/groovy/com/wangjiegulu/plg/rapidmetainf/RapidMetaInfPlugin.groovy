@@ -1,10 +1,6 @@
 package com.wangjiegulu.plg.rapidmetainf
 
-import com.android.build.gradle.AppExtension
-import com.android.build.gradle.LibraryExtension
-import com.android.build.gradle.LibraryPlugin
-import com.android.build.gradle.TestExtension
-import com.android.build.gradle.TestPlugin
+import com.android.build.gradle.*
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
@@ -30,7 +26,7 @@ class RapidMetaInfPlugin implements Plugin<Project> {
             project.extensions.getByType(TestExtension).sourceSets({
                 main.resources.srcDirs += resDir
             })
-        } else {
+        } else if (project.plugins.hasPlugin(AppPlugin)) {
 //            project.extensions.getByType(AppExtension).sourceSets.main.resources.srcDirs += resDir
             project.extensions.getByType(AppExtension).sourceSets({
                 main.resources.srcDirs += resDir

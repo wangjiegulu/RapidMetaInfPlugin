@@ -1,5 +1,5 @@
 import com.wangjiegulu.plg.rapidmetainf.RapidMetaInfPlugin
-
+//
 apply plugin: 'com.android.library'
 
 //com.wangjie.myplugin为resources/META-INF/gradle-plugins
@@ -10,13 +10,25 @@ apply plugin: RapidMetaInfPlugin
 rapidmetainf {
     metaInfName 'depmodule.properties'
     metaInfProperties "appName=$appName",
-            "appVersion=$appVersion"
+            "appVersion=$appVersion",
+            "propertyFromCommand=${getParameter('commandKey')}" // ./gradlew :depmodule:clean :depmodule:build -PcommandKey=commandValue
+}
+
+def getParameter(String key) {
+    // -D
+    String value = System.getProperty(key)
+    if (null != value && value.length() > 0) {
+        return value
+    }
+    // -P
+    if (hasProperty(key)) {
+        return getProperty(key)
+    }
+    return null
 }
 
 android {
     compileSdkVersion 26
-
-
 
     defaultConfig {
         minSdkVersion 14
@@ -45,3 +57,4 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
+
