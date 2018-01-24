@@ -1,0 +1,51 @@
+import com.wangjiegulu.plg.rapidmetainf.RapidMetaInfPlugin
+
+apply plugin: 'com.android.application'
+
+//com.wangjie.myplugin为resources/META-INF/gradle-plugins
+//下的properties文件名称
+//apply plugin: 'com.github.wangjiegulu.plg.rapidmetainf'
+apply plugin: RapidMetaInfPlugin
+
+rapidmetainf {
+    metaInfName 'RMI.properties'
+    metaInfProperties "appName=$appName", "appVersion=$appVersion"
+}
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.wangjiegulu.rapidmetainfplugin"
+        minSdkVersion 14
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    implementation project(':depmodule')
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}

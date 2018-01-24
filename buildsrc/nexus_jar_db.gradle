@@ -1,0 +1,48 @@
+// ********************************** upload archives ***********************************
+
+apply plugin: 'maven'
+
+group = "$dbarchiveGroup"
+version = "$dbarchiveVersion"
+
+repositories {
+    mavenCentral();
+}
+
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar, javadocJar
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://nexus.dangbei.net/nexus/content/repositories/releases/") {
+                authentication(userName: "$dbossrhUsername", password: "$dbossrhPassword")
+            }
+            snapshotRepository(url: "http://nexus.dangbei.net/nexus/content/repositories/snapshots/") {
+                authentication(userName: "$dbossrhUsername", password: "$dbossrhPassword")
+            }
+
+            pom.project {
+                artifactId "$dbarchiveName"
+                name "$dbarchiveName"
+                packaging 'jar'
+
+                description "$dbarchiveDesc"
+                url "$dbarchiveUrl"
+
+            }
+
+        }
+    }
+}
