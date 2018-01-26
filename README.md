@@ -10,7 +10,7 @@ Android Gradle Plugin for add generate file to META-INF folder in apk.
 
 ## 1. How to use
 
-Add `rapid meta inf plugin` to `build.gradle` of root project **([Check newest version](http://search.maven.org/#search%7Cga%7C1%7CRapidMetaInfPlugin))**:
+Add `rapid meta inf plugin` to `build.gradle` of root project **([Check newest version](http://search.maven.org/#search%7Cga%7C1%7CRapidMetaInf))**:
 
 ```groovy
 buildscript {
