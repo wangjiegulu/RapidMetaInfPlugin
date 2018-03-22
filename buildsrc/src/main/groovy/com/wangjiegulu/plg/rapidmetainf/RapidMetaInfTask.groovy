@@ -60,8 +60,8 @@ public class RapidMetaInfTask extends DefaultAndroidTask {
 //        vfile.text = "$repo_info\n"
 
         StringBuilder sb = new StringBuilder()
-                .append("generateBy=RapidMetaInfPlugin").append("\n")
-                .append("pluginUrl=https://github.com/wangjiegulu/RapidMetaInfPlugin").append("\n")
+                .append("Generate-By=RapidMetaInfPlugin").append("\n")
+                .append("Plugin-Url=https://github.com/wangjiegulu/RapidMetaInfPlugin").append("\n")
 //                .append("pluginVersion=").append("\n")
         String[] metaInfProperties = rapidMetaInfExtension.metaInfProperties
         if (null != metaInfProperties && metaInfProperties.length > 0) {
