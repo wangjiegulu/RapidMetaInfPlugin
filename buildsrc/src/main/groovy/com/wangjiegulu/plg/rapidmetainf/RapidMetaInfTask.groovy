@@ -1,11 +1,11 @@
 package com.wangjiegulu.plg.rapidmetainf
 
-import com.android.build.gradle.internal.tasks.DefaultAndroidTask
+import com.android.build.gradle.internal.tasks.AndroidVariantTask
 import org.gradle.api.Action
 import org.gradle.api.Task
 import org.gradle.api.tasks.TaskAction
 
-public class RapidMetaInfTask extends DefaultAndroidTask {
+public class RapidMetaInfTask extends AndroidVariantTask {
     public RapidMetaInfTask() {
         setVariantName("rapidmetainf_VariantName")
     }

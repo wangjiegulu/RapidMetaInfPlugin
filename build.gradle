@@ -10,7 +10,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.2.1'
         
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -28,16 +28,16 @@ allprojects {
     }
 
     ext {
-        global_compileSdkVersion = 26
+        global_compileSdkVersion = 28
         global_minSdkVersion = 14
-        global_targetSdkVersion = 26
+        global_targetSdkVersion = 28
 
-        global_supportVersion = '26.1.0'
-        global_constraintLayoutVersion = "1.0.2"
+        global_supportVersion = '28.0.0'
+        global_constraintLayoutVersion = "1.1.3"
 
         global_junitVersion = '4.12'
-        global_runnerVersion = '1.0.1'
-        global_espressoVersion = '3.0.1'
+        global_runnerVersion = '1.0.2'
+        global_espressoVersion = '3.0.2'
     }
 
 }
