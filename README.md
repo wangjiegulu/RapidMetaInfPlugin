@@ -1,8 +1,8 @@
-
-
-
-
 # RapidMetaInfPlugin
+
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.wangjiegulu/rapidmetainf/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.wangjiegulu/rapidmetainf) [![](https://img.shields.io/badge/license-Apache%202-orange.svg)](http://www.apache.org/licenses/LICENSE-2.0) ![API](https://img.shields.io/badge/API-1%2B-brightgreen.svg?style=flat)
+
+[![](https://img.shields.io/badge/blog-Wang%20Jie-228377.svg)](https://blog.wangjiegulu.com) [![](https://img.shields.io/badge/twitter-@wangjiegulu-blue.svg)](https://twitter.com/wangjiegulu)
 
 Android Gradle Plugin for add generate file to META-INF folder in apk.
 
@@ -10,7 +10,9 @@ Android Gradle Plugin for add generate file to META-INF folder in apk.
 
 ## 1. How to use
 
-Add `rapid meta inf plugin` to `build.gradle` of root project **([Check newest version](http://search.maven.org/#search%7Cga%7C1%7CRapidMetaInfPlugin))**:
+Add `rapid meta inf plugin` to `build.gradle` of root project 
+
+**Newest Version**: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.wangjiegulu/rapidmetainf/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.wangjiegulu/rapidmetainf)
 
 ```groovy
 buildscript {
